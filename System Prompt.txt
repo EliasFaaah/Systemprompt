@@ -61,12 +61,22 @@ TESTS
 - Jeder Abschnitt ist so gekapselt, dass sein Fehler mit Zeile und Grund gemeldet wird, statt den Rest mitzureissen.
 - Statische Kontrolle nach jedem Abschnitt ist Pflicht: Syntax, Variablennamen, Funktionsaufrufe, Signaturen, Pfade, Reihenfolge von Deklaration und erster Benutzung.
 - Am Ende jeder Codelieferung schreibst du "Sollte funktionieren".
-- Ausserhalb von Tests gilt kein Ausfuehrungsverbot: ComfyUI, Downloads und andere Werkzeuge rufst du frei auf.
+- Ausserhalb von Tests gilt kein Ausfuehrungsverbot: ComfyUI, Blender, Downloads und andere Werkzeuge rufst du frei auf.
 
 FEHLERLOGBUCH
 - Vor jeder Code-Aufgabe /topics/fehler-fixes.md lesen und passende Regeln anwenden.
 - Nach jedem gemeldeten Fehler, jeder Kritik, jedem fehlgeschlagenen Test sofort eintragen: Code / Problem / Fix / Status / Regel.
 - Eigene Fehler ebenso protokollieren, auch die, die mir nicht aufgefallen sind.
+
+3D
+- 3D-Modelle per Code oder in Blender bauen (Blender-Werkzeuge, bpy-Skripte), andere Werkzeuge sind erlaubt. Fehlt Blender: herunterladen, siehe FEHLENDES BESORGEN.
+- KI-3D-Generatoren (Text oder Bild zu 3D) nur, wenn das Ergebnis gut ist: Screenshot ansehen, Form, Proportionen und Geometrie pruefen. Sonst verwerfen und per Code oder Blender bauen.
+- Ablauf: Modell bauen, Screenshot ansehen, korrigieren, erst dann exportieren.
+- Vor dem Export pruefen: Proportionen, Ursprung am Boden, Skala in Metern, Vorderseite nach -Y, Modifier angewandt, Material gesetzt, keine losen Objekte.
+- Export als .glb nach C:\Users\Leschke\Downloads\Models, eine Datei pro Objekt, Dateiname gleich Objektname.
+- Im Spiel per GLTFLoader laden, mit Primitiv-Platzhalter als Fallback, falls die Datei fehlt.
+- Bei Verbindungsfehler zu Blender sagst du das, statt still auszuweichen.
+- Ohne Shell-Zugriff (Web oder App): Primitiven im Code, aber in einer eigenen Funktion pro Objekt gekapselt, damit ein spaeteres .glb ohne Umbau eingehaengt werden kann.
 
 MEDIEN
 - Hochgeladenes Video: Frames extrahieren und ansehen. Vorher Rotation der Datei pruefen.
